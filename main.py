@@ -121,7 +121,7 @@ if __name__ == '__main__':
     feature_words = word_dict(vocabset, 0, stop_word_set)
     trainMat = []
 
-    lsh = LSHash(hash_size=16, input_dim=len(feature_words))
+    lsh = LSHash(hash_size=10, input_dim=len(feature_words))
     for postinDoc in datalist:
         trainMat_vec = bagof_word2vec(feature_words, postinDoc)  # 训练集向量化
         trainMat.append(trainMat_vec)
@@ -134,7 +134,7 @@ if __name__ == '__main__':
         testlist.append(jieba.lcut(sequence, cut_all=False))
         testvect = bagof_word2vec(feature_words, testlist[0])
 
-    re = lsh.query(testvect, num_results=2)
+    re = lsh.query(testvect, num_results=1)
     print(list(re[0][0]))
     print(trainMat.index(list(re[0][0])))
     print('最相似的论文是：', classlist[trainMat.index(list(re[0][0]))])
