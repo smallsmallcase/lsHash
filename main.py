@@ -135,4 +135,6 @@ if __name__ == '__main__':
         testvect = bagof_word2vec(feature_words, testlist[0])
 
     re = lsh.query(testvect, num_results=2)
+    print(list(re[0][0]))
+    print(trainMat.index(list(re[0][0])))
     print('最相似的论文是：', classlist[trainMat.index(list(re[0][0]))])
