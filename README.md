@@ -1,4 +1,6 @@
 <a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
+
+
 1.LSH算法简介：
 
 我们将这样的一族hash函数 H={h:S→U} 称为是(r1,r2,p1,p2)敏感的，如果对于任意H中的函数h，满足以下2个条件：
